@@ -128,7 +128,7 @@ public class Principal extends AppCompatActivity {
             case android.R.id.home:
                 correo.setText("" + UsuarioFacebook.getCorreoUsuario());
                 nombre.setText(UsuarioFacebook.getNameUsuario().toUpperCase());
-                //Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + UsuarioFacebook.getIdFacebookUsuario() + "/picture?type=normal").transform(new CircleTransform()).into(image);
+                Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + UsuarioFacebook.getIdFacebookUsuario() + "/picture?type=normal").transform(new CircleTransform()).into(image);
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
             case R.id.action_carrito:

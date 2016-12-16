@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">EasyMarket</string>
-
-    <string name="facebook_app_id">376019319411218</string>
-
-
+    <string name="facebook_app_id">1750927048562622</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

@@ -173,12 +173,6 @@ public class CreateCuenta extends AppCompatActivity {
     }
 
 
-    public void cambiarActividad() {
-        finish();
-        startActivity(new Intent(this, MainActivity.class));
-        overridePendingTransition(R.transition.left_in, R.transition.left_out);
-
-    }
 
     public void cambiarActividadPrincipal() {
         finish();
