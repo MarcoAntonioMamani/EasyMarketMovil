@@ -21,11 +21,24 @@ import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
 import com.github.snowdream.android.widget.SmartImageView;
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 import com.uagrm.emprendecruz.emarket.Configuracion;
+import com.uagrm.emprendecruz.emarket.Modelo.producto;
+import com.uagrm.emprendecruz.emarket.PedidoActivity;
 import com.uagrm.emprendecruz.emarket.R;
 import com.uagrm.emprendecruz.emarket.Util.CircleTransform;
+import com.uagrm.emprendecruz.emarket.Util.ListCarrito;
 import com.uagrm.emprendecruz.emarket.Util.UsuarioFacebook;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 public class Principal extends AppCompatActivity {
 
@@ -46,7 +59,7 @@ public class Principal extends AppCompatActivity {
         nombre = (TextView) headerView.findViewById(R.id.TvNombreCliente);
         correo = (TextView) headerView.findViewById(R.id.TvCorreoDrawer);
         image = (SmartImageView) headerView.findViewById(R.id.IVSmartPerfil);
-
+        ObtenerListaproductos();
         if (navigationView != null) {
             prepararDrawer(navigationView);
             // Seleccionar item por defecto
@@ -133,16 +146,132 @@ public class Principal extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
             case R.id.action_carrito:
-                //cambiarActividad();
+                cambiarActividad();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void cambiarActividad(){
+        startActivity(new Intent(this,PedidoActivity.class));
+        overridePendingTransition(R.transition.left_in, R.transition.left_out);
     }
 
     private void goLoginScreen() {
         Intent i = new Intent(this, LoginActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
+    }
+
+
+    public void ObtenerListaproductos(){
+
+        AsyncHttpClient client=new AsyncHttpClient();
+
+        client.get("http://54.201.162.73/EasyMarket/mostrar_producto_verduras.php", new AsyncHttpResponseHandler() {
+
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                if (statusCode==200){
+                    //  progresdialog.dismiss();
+                    try{
+                        ListCarrito.setListProductoVerduras(new ArrayList<producto>());
+                        JSONArray jsonarray=new JSONArray(new String(responseBody));
+                        for (int i=0;i<jsonarray.length();i++){
+                            String json1 = ""+jsonarray.getJSONObject(i).toString();
+                            Gson gson = new Gson();
+                            producto produ =  gson.fromJson(json1, producto.class);
+                            ListCarrito.getListProductoVerduras().add(produ);
+
+                            //  mensajeLogin(""+clie.getNombre());
+
+                            //   cambiarActividad();
+                        }
+
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+                ListCarrito.setLogeo(true);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+        AsyncHttpClient client2=new AsyncHttpClient();
+
+        client2.get("http://54.201.162.73/EasyMarket/mostrar_producto_bebidas.php", new AsyncHttpResponseHandler() {
+
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                if (statusCode==200){
+                    //   progresdialog.dismiss();
+                    try{
+                        ListCarrito.setListProductoBebidas(new ArrayList<producto>());
+                        JSONArray jsonarray=new JSONArray(new String(responseBody));
+                        for (int i=0;i<jsonarray.length();i++){
+                            String json1 = ""+jsonarray.getJSONObject(i).toString();
+                            Gson gson = new Gson();
+                            producto produ =  gson.fromJson(json1, producto.class);
+                            ListCarrito.getListProductoBebidas().add(produ);
+
+                            //  mensajeLogin(""+clie.getNombre());
+
+                            //   cambiarActividad();
+                        }
+
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+        AsyncHttpClient client3=new AsyncHttpClient();
+
+        client3.get("http://54.201.162.73/EasyMarket/mostrar_producto_carnes.php", new AsyncHttpResponseHandler() {
+
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                if (statusCode==200){
+                    try{
+                        ListCarrito.setListProductoCarnes(new ArrayList<producto>());
+                        JSONArray jsonarray=new JSONArray(new String(responseBody));
+                        for (int i=0;i<jsonarray.length();i++){
+                            String json1 = ""+jsonarray.getJSONObject(i).toString();
+                            Gson gson = new Gson();
+                            producto produ =  gson.fromJson(json1, producto.class);
+                            ListCarrito.getListProductoCarnes().add(produ);
+
+                            //  mensajeLogin(""+clie.getNombre());
+
+                            //   cambiarActividad();
+                        }
+
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
     }
 
 

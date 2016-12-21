@@ -34,9 +34,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
 
 
-
-
-
     <string name="titulo_comidas_populares">Lo más pedido</string>
 
     <string name="titulo_tab_platillos">CARNES</string>
@@ -79,8 +76,6 @@
 
     <string name="slide_5_title">Cars!</string>
     <string name="slide_5_desc">Follow The Latest Updates on Hot Wheels!</string>
-
-
 
 
     <string name="titulo_preferencia">Frecuencia de notificaciones por correo</string>

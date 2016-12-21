@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:id="@+id/contenedor_pedido"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                >
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    android:id="@+id/ColumnProducto"
+
+                    android:contextClickable="false">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent"
+                        android:id="@+id/TableRowProducto"
+                        >
+
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                >
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    android:id="@+id/ColumnCantidad">
+
+
+                </TableLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                >
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    android:id="@+id/ColumnPrecio">
+
+
+
+
+                </TableLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                >
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    android:id="@+id/ColumnPrecioTotal">
+
+
+
+
+                </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+        android:layout_height="wrap_content"
+        android:text="Realizar pedido"
+        android:background="@drawable/esquinaredondeadaestudiante"
+        android:id="@+id/button"
+        android:textColor="@color/blanco"
+        android:textStyle="bold"
+        android:onClick="onClickTost"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp">
+
+    </LinearLayout>
+</LinearLayout>
