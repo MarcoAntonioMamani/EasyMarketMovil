@@ -18,10 +18,13 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.uagrm.emprendecruz.emarket.Modelo.Enviador;
+import com.uagrm.emprendecruz.emarket.Modelo.Usuario;
 import com.uagrm.emprendecruz.emarket.R;
+import com.uagrm.emprendecruz.emarket.Util.UsuarioFacebook;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -127,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         progresdialog.show();
         AsyncHttpClient client=new AsyncHttpClient();
         //+"&contrasena="+passw+""
-        client.get("http://54.201.162.73/EasyMarket/enviador.php?correo="+correo, new AsyncHttpResponseHandler() {
+        client.get("http://54.201.162.73/EasyMarket/login.php?email="+correo+"&password="+passw+"", new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 Enviador enviador = new Enviador();
@@ -139,14 +142,15 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Usuario o Contraseña Incorrecta" ,Toast.LENGTH_SHORT).show();
                             return;
                         }else{
-                            enviador.setIdEnviador(jsonarray.getJSONObject(0).getString("idEnviador"));
-                            idEnviador = jsonarray.getJSONObject(0).getString("idEnviador");
-                            enviador.setNombre(jsonarray.getJSONObject(0).getString("nombre"));
-                            enviador.setImgEnv(jsonarray.getJSONObject(0).getString("imgEnv"));
-                            enviador.setCorreo(jsonarray.getJSONObject(0).getString("correo"));
-                            enviador.setContrasena(jsonarray.getJSONObject(0).getString("contrasena"));
-                            Toast.makeText(getApplicationContext(),"Sesion correcta" ,Toast.LENGTH_SHORT).show();
-                            goMainScreen();
+
+                            for (int i=0;i<jsonarray.length();i++){
+                                String json1 = ""+jsonarray.getJSONObject(i).toString();
+                                Gson gson = new Gson();
+                                Usuario clie =  gson.fromJson(json1, Usuario.class);
+
+                                UsuarioFacebook.setUser(clie);
+                                goMainScreen();
+                            }
                         }
                     }catch (JSONException e){
                         e.printStackTrace();

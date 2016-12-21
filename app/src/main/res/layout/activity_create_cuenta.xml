@@ -52,21 +52,22 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:background="@color/com_facebook_button_background_color_pressed">
+                        android:layout_weight="1.5"
+                        >
 
                         <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Registrar Nuevo Usuario"
-                                android:textColor="@color/blanco"
-                                android:textStyle="bold" />
+                                android:textColor="@color/teal"
+
+                                android:text="REGISTRAR USUARIO NUEVO"
+                                android:textStyle="bold|italic" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -91,28 +92,30 @@
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
+                            android:paddingLeft="10dp"
                             android:orientation="vertical">
 
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="40dp"
+                                android:paddingLeft="10dp"
                                 android:text="Nombre:"
-                                android:textColor="@color/blanco"
+                                android:textColor="@color/teal"
                                 android:textStyle="bold" />
 
                             <AutoCompleteTextView
                                 android:id="@+id/TvNameCreate"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@color/blanco"
-                                android:drawableLeft="@mipmap/name"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:textColor="@color/com_facebook_button_login_silver_background_color"
                                 android:drawablePadding="10dp"
                                 android:hint="Ingrese su Nombre"
                                 android:imeOptions="actionUnspecified"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
+                                android:textColorHint="@color/com_facebook_button_border_color_focused"
+
                                 android:singleLine="true" />
                         </LinearLayout>
                     </LinearLayout>
@@ -126,25 +129,27 @@
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
+                            android:paddingLeft="10dp"
                             android:orientation="vertical">
 
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="40dp"
+                                android:paddingLeft="10dp"
                                 android:text="Correo :"
-                                android:textColor="@color/blanco"
+                                android:textColor="@color/teal"
                                 android:textStyle="bold" />
 
                             <AutoCompleteTextView
                                 android:id="@+id/TVcorreoCreate"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@color/blanco"
-                                android:drawableLeft="@mipmap/correo"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:textColor="@color/com_facebook_button_login_silver_background_color"
+
                                 android:drawablePadding="10dp"
                                 android:hint="Ingrese su Correo"
+                                android:textColorHint="@color/com_facebook_button_border_color_focused"
                                 android:imeOptions="actionUnspecified"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
@@ -160,26 +165,28 @@
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
+                            android:paddingLeft="10dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="40dp"
+                                android:paddingLeft="10dp"
                                 android:text="Ingrese Nueva Contraseña:"
-                                android:textColor="@color/blanco"
+                                android:textColor="@color/teal"
                                 android:textStyle="bold" />
 
                             <AutoCompleteTextView
                                 android:id="@+id/TVContrasenaA"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@color/blanco"
-                                android:drawableLeft="@mipmap/key"
                                 android:drawablePadding="10dp"
+                                android:textColorHint="@color/com_facebook_button_border_color_focused"
                                 android:hint="Ingrese su Contraseña Nueva"
                                 android:imeOptions="actionUnspecified"
                                 android:inputType="textPassword"
+                                android:textColor="@color/com_facebook_button_login_silver_background_color"
+
                                 android:maxLines="1"
                                 android:singleLine="true" />
                         </LinearLayout>
@@ -194,25 +201,27 @@
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
+                            android:paddingLeft="10dp"
                             android:orientation="vertical">
 
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="40dp"
+                                android:paddingLeft="10dp"
                                 android:text="Repita Su Contraseña:"
-                                android:textColor="@color/blanco"
+                                android:textColor="@color/teal"
                                 android:textStyle="bold" />
 
                             <AutoCompleteTextView
                                 android:id="@+id/TVRepetirContrasenaB"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@color/blanco"
-                                android:drawableLeft="@mipmap/pas"
+                             android:textColorHint="@color/com_facebook_button_border_color_focused"
                                 android:drawablePadding="10dp"
                                 android:hint="Repita su Contraseña Nueva"
+                                android:textColor="@color/com_facebook_button_login_silver_background_color"
+
                                 android:imeOptions="actionUnspecified"
                                 android:inputType="textPassword"
                                 android:maxLines="1"

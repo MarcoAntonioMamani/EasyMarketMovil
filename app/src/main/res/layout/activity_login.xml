@@ -30,30 +30,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:orientation="vertical"
         android:layout_margin="10dp">
 
-        <EditText
-            android:id="@+id/et_user_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/usuario"
-            android:hint="Correo o usuario"
-            android:paddingBottom="10dp"
-            android:textColorHint="@android:color/secondary_text_dark_nodisable"
-            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                >
+                <EditText
+                    android:id="@+id/et_user_login"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/usuario"
+                    android:hint="Correo o usuario"
+
+                    android:textColorHint="@android:color/secondary_text_dark_nodisable"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                >
 
         <EditText
             android:id="@+id/et_password_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:drawableLeft="@drawable/contrasena"
             android:inputType="textPassword"
             android:hint="Password"
             android:textColorHint="@android:color/secondary_text_light_nodisable"
             android:textColor="@android:color/white" />
-
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                >
         <Button
             android:id="@+id/bt_ingresar_login"
             android:layout_width="match_parent"
@@ -61,18 +85,26 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="INGRESAR"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             style="?android:borderlessButtonStyle"
-            android:background="@color/teal" />
-        
+            android:background="@drawable/esquinaredondeadaestudiante" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="¿Has olvidado la contraseña?"
             android:textColor="@android:color/white"/>
+                </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

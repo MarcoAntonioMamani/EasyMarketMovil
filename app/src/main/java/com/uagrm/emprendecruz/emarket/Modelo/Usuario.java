@@ -6,10 +6,10 @@ package com.uagrm.emprendecruz.emarket.Modelo;
 public class Usuario {
 
     int id;
-    String nombre;
-    String correo;
+    String name;
+    String email;
     String password;
-    String idfacebook;
+    String provider_user_id;
 
     public Usuario() {
     }
@@ -22,20 +22,20 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -46,11 +46,11 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getIdfacebook() {
-        return idfacebook;
+    public String getProvider_user_id() {
+        return provider_user_id;
     }
 
-    public void setIdfacebook(String idfacebook) {
-        this.idfacebook = idfacebook;
+    public void setProvider_user_id(String provider_user_id) {
+        this.provider_user_id = provider_user_id;
     }
 }

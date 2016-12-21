@@ -126,9 +126,9 @@ public class Principal extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                correo.setText("" + UsuarioFacebook.getCorreoUsuario());
-                nombre.setText(UsuarioFacebook.getNameUsuario().toUpperCase());
-                //Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + UsuarioFacebook.getIdFacebookUsuario() + "/picture?type=normal").transform(new CircleTransform()).into(image);
+                correo.setText("" + UsuarioFacebook.getUser().getEmail());
+                nombre.setText(UsuarioFacebook.getUser().getName().toUpperCase());
+                Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + UsuarioFacebook.getUser().getProvider_user_id() + "/picture?type=normal").transform(new CircleTransform()).into(image);
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
             case R.id.action_carrito:
