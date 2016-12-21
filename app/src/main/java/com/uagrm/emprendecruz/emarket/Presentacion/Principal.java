@@ -91,7 +91,7 @@ public class Principal extends AppCompatActivity {
                 break;
             case R.id.item_categorias:
 
-                //fragmentoGenerico = new FragmentoCategorias();
+                fragmentoGenerico = new FragmentoCategorias();
                 break;
             case R.id.item_configuracion:
                 startActivity(new Intent(this, Configuracion.class));
