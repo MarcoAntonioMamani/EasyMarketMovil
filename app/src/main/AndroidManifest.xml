@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".Presentacion.MainActivity" />
         <activity android:name=".Presentacion.CreateCuenta" />
-        <activity android:name=".Presentacion.Principal"></activity>
+        <activity android:name=".Presentacion.Principal" />
+        <activity android:name=".Configuracion"></activity>
     </application>
 
 </manifest>
