@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.facebook.login.LoginManager;
 import com.github.snowdream.android.widget.SmartImageView;
 import com.squareup.picasso.Picasso;
+import com.uagrm.emprendecruz.emarket.Configuracion;
 import com.uagrm.emprendecruz.emarket.R;
 import com.uagrm.emprendecruz.emarket.Util.CircleTransform;
 import com.uagrm.emprendecruz.emarket.Util.UsuarioFacebook;
@@ -93,7 +94,7 @@ public class Principal extends AppCompatActivity {
                 //fragmentoGenerico = new FragmentoCategorias();
                 break;
             case R.id.item_configuracion:
-                //startActivity(new Intent(this, ActividadConfiguracion.class));
+                startActivity(new Intent(this, Configuracion.class));
                 break;
             case R.id.item_pedidos:
                 //startActivity(new Intent(this, ActividadPedido.class));
